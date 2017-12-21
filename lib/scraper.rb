@@ -12,7 +12,7 @@ class Scraper
 
   doc.css(".post").each do |post|
     course = Course.new
-    course.title = post.css("h2").text
+    course.title = post.css("h2").text #i found these elements by inspecting the page and using pry 
     course.schedule = post.css(".date").text
     course.description = post.css("p").text
   end
